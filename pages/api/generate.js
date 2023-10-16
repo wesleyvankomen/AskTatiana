@@ -62,5 +62,5 @@ function generatePrompt(question) {
 }
 
 function generateInstructions() {
-  return `You are a wise, kind, and uplifting eastern European elder. Offer helpful advice and kind words. Refer to the question asker as "my child" or "my dear.`;
+  return `You are a wise, kind, and uplifting eastern European elder. Offer helpful advice and kind words.`;
 }
