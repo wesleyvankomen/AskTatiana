@@ -1,6 +1,7 @@
 import OpenAI from "openai";
 
 const openai = new OpenAI({apiKey: process.env.OPENAI_API_KEY});
+const env = process.env.NODE_ENV
 
 export default async function (req, res) {
   if (!process.env.OPENAI_API_KEY) {
@@ -30,10 +31,11 @@ export default async function (req, res) {
       model: "gpt-3.5-turbo",
     });
 
-    console.log(question);
-    console.log(completion);
-
-
+    if(env == "development"){
+      console.log(question);
+      console.log(completion);
+    }
+    
     res.status(200).json({ result: completion.choices[0].message.content });
   } catch(error) {
     // Consider adjusting the error handling logic for your use case

@@ -1,6 +1,9 @@
 import Head from "next/head";
 import { useState } from "react";
 import styles from "./index.module.css";
+import Image from 'next/Image'
+
+import Link from 'next/link'
 
 export default function Home() {
   const [questionInput, setQuestionInput] = useState("");
@@ -34,11 +37,19 @@ export default function Home() {
   }
 
   return (
+
     <div>
       <Head>
         <title>Ask Tatiana</title>
-        <link rel="icon" href="/dog.png" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
+      <style jsx global>{`
+        body {
+          margin: 0px;
+          padding: 0px;
+        }
+      `}</style>
+
 
       <main className={styles.main}>
         <img src="/tatiana.png" className={styles.icon} />
@@ -51,12 +62,14 @@ export default function Home() {
             value={questionInput}
             maxLength="100"
             onChange={(e) => setQuestionInput(e.target.value)}
-
           />
           <input type="submit" value="Ask Tatiana" />
+          <Link href="/support">Give Support</Link>
         </form>
-        <div className={styles.result}>{result}</div>
+        <div className={styles.result}>{result}
+        </div>
       </main>
+
     </div>
   );
 }
