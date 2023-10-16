@@ -7,7 +7,6 @@ export default function Home() {
   const [result, setResult] = useState();
 
   async function onSubmit(event) {
-    document.activeElement.blur()
     event.preventDefault();
     try {
 
@@ -51,7 +50,9 @@ export default function Home() {
             placeholder="Ask a question or share a concern"
             value={questionInput}
             maxLength="100"
-            onChange={(e) => setQuestionInput(e.target.value)}
+            //onChange={(e) => setQuestionInput(e.target.value)}
+            onChange={this.setQuestionInput.bind(this)}
+
           />
           <input type="submit" value="Ask Tatiana" />
         </form>
