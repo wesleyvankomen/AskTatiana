@@ -46,12 +46,11 @@ export default function Home() {
         <form onSubmit={onSubmit}>
           <input
             type="text"
-            name="question"
+            name="questionInput"
             placeholder="Ask a question or share a concern"
             value={questionInput}
             maxLength="100"
-            //onChange={(e) => setQuestionInput(e.target.value)}
-            onChange={this.setQuestionInput.bind(this)}
+            onChange={(e) => setQuestionInput(e.target.value)}
 
           />
           <input type="submit" value="Ask Tatiana" />
