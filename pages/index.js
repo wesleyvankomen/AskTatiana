@@ -1,8 +1,6 @@
 import Head from "next/head";
 import { useState } from "react";
 import styles from "./index.module.css";
-import Image from 'next/Image'
-
 import Link from 'next/link'
 
 export default function Home() {
