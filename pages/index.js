@@ -7,6 +7,7 @@ export default function Home() {
   const [result, setResult] = useState();
 
   async function onSubmit(event) {
+    document.activeElement.blur()
     event.preventDefault();
     try {
 
@@ -51,8 +52,6 @@ export default function Home() {
             value={questionInput}
             maxLength="100"
             onChange={(e) => setQuestionInput(e.target.value)}
-            onKeyUp={(e) => setQuestionInput(e.target.value)}
-
           />
           <input type="submit" value="Ask Tatiana" />
         </form>
