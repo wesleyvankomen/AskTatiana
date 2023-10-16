@@ -8,7 +8,6 @@ export default function Home() {
 
   async function onSubmit(event) {
     event.preventDefault();
-    setQuestionInput(document.querySelector('input').value);
     try {
 
       if(questionInput.trim().length === 0){return};

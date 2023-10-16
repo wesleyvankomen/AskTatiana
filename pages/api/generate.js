@@ -26,9 +26,9 @@ export default async function (req, res) {
     const completion = await openai.chat.completions.create({
       // const completion = await openai.chat.completions.create({
       messages:[{"role": "system", "content": generateInstructions()},
-      // messages:[{"role": "user", "content": generatePrompt(question)}],
                 {"role": "user", "content": generatePrompt(question)}],
       model: "gpt-3.5-turbo",
+      top_p: .5,
     });
 
     console.log(question);
