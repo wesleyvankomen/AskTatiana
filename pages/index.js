@@ -11,7 +11,6 @@ export default function Home() {
     try {
 
       if(questionInput.trim().length === 0){return};
-      
       const response = await fetch("/api/generate", {
         method: "POST",
         headers: {
@@ -52,6 +51,8 @@ export default function Home() {
             value={questionInput}
             maxLength="100"
             onChange={(e) => setQuestionInput(e.target.value)}
+            onKeyUp={(e) => setQuestionInput(e.target.value)}
+
           />
           <input type="submit" value="Ask Tatiana" />
         </form>
