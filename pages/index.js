@@ -9,6 +9,9 @@ export default function Home() {
   async function onSubmit(event) {
     event.preventDefault();
     try {
+
+      if(questionInput.trim().length === 0){return};
+      
       const response = await fetch("/api/generate", {
         method: "POST",
         headers: {
