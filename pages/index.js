@@ -59,8 +59,8 @@ export default function Home() {
         <title>Ask Tatiana</title>
         <link rel="icon" href="/favicon.png" />
       </Head>
-      
-      <main className="container max-w-xl h-full text-center">
+
+      <main className="container max-w-2xl w-full h-full text-center">
         <img src="/tatiana.png"/>
         <p className="text-l py-4">My dear, I am here to listen and offer guidance. What troubles you today?</p>
         <form onSubmit={onSubmit} className="column-2">
