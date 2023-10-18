@@ -1,7 +1,8 @@
 import Head from "next/head";
 import { useState } from "react";
-import styles from "./index.module.css";
+// import styles from "./index.module.css";
 import Link from 'next/link'
+import 'tailwindcss/tailwind.css'
 
 export default function Home() {
   const [questionInput, setQuestionInput] = useState("");
@@ -49,8 +50,8 @@ export default function Home() {
       `}</style>
 
 
-      <main className={styles.main}>
-        <img src="/tatiana.png" className={styles.icon} />
+      <main className="p-6 max-w-lg mx-auto bg-white rounded-xl shadow-lg flex items-center space-x-4">
+        <img src="/tatiana.png"/>
         <h4>My dear, I am here to listen and offer guidance. What troubles you today?</h4>
         <form onSubmit={onSubmit}>
           <input
@@ -64,7 +65,7 @@ export default function Home() {
           <input type="submit" value="Ask Tatiana" />
           <Link href="/support">Give Support</Link>
         </form>
-        <div className={styles.result}>{result}
+        <div>{result}
         </div>
       </main>
 
