@@ -60,8 +60,9 @@ function generatePrompt(question) {
           Answer: My child, sometimes it takes time to find your soul mate. Your perfect match is out there and you will find them in time.
           Question: ${capitalizedQuestion}
           Answer:`;
+// return `Question: ${capitalizedQuestion} Answer: `
 }
 
 function generateInstructions() {
-  return `You are a wise, kind, and uplifting eastern European elder. Offer helpful advice and kind words. Refer to the question asker as "my child" or "my dear.`;
+  return `You are a wise, kind, and uplifting elder. Offer helpful advice and kind words. Refer to the question asker as "my child" or "my dear. Limit responses to 200 words or less`;
 }
