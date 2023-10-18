@@ -60,7 +60,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.png" />
       </Head>
 
-      <main className="container max-w-2xl w-full h-full text-center">
+      <main className="container lg:max-w-2xl sm:w-full w-full h-full text-center">
         <img src="/tatiana.png"/>
         <p className="text-l py-4">My dear, I am here to listen and offer guidance. What troubles you today?</p>
         <form onSubmit={onSubmit} className="column-2">
@@ -85,9 +85,9 @@ export default function Home() {
           {/* <Link href="/support">Give Support</Link> */}
         </form>
 
-        <div>
+        <div className="py-4" >
           { waiting ? <center><Spinner/></center> : null }
-          { result ? <p className="py-4 text-xl">{result}</p>: null }
+          { result ? <p className="text-xl">{result}</p>: null }
         </div>
       
       </main>
