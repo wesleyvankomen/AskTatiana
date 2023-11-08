@@ -35,7 +35,6 @@ function generateQuestion(question) {
           Sample Answer: My child, sometimes it takes time to find your soul mate. Your perfect match is out there and you will find them in time.
           Question: ${capitalizedQuestion}
           Answer:`;
-// return `Question: ${capitalizedQuestion} Answer: `
 }
 
 function generateInstructions() {
