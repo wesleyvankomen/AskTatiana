@@ -9,7 +9,7 @@ const openai = new OpenAI({
 // Set the runtime to edge for best performance
 export const runtime = 'edge';
  
-export default async function POST(req: Request) {
+export default async function POST(req) {
   const { prompt } = await req.json();
  
   const response = await openai.chat.completions.create({
