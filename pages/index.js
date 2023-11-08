@@ -34,12 +34,14 @@ export default function Home() {
       
       setResult(data.result);
 
-      // setTimeout(() => {
-      //   setResult("success!");
-      //   setTimeout(() => {
-      //     setWaiting(false);
-      //   }, 4000);
-      // }, 2000);
+    // if(env == "development"){
+    //   setTimeout(() => {
+    //     setResult("success!");
+    //     setTimeout(() => {
+    //       setWaiting(false);
+    //     }, 4000);
+    //   }, 2000);
+    // }
 
       setQuestionInput("");
     } catch(error) {
@@ -62,10 +64,10 @@ export default function Home() {
 
       <main className="container lg:max-w-2xl sm:w-full w-full h-full text-center">
         <img src="/tatiana.png"/>
-        <p className="text-l py-4">My dear, I am here to listen and offer guidance. What troubles you today?</p>
+        <p className="text-l sm:text-xl py-4">My dear, I am here to listen and offer guidance. What troubles you today?</p>
         <form onSubmit={onSubmit} className="column-2">
           <input
-            className="shadow appearance-none border rounded w-2/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-left"
+            className="shadow appearance-none border rounded w-2/3 py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline text-left sm:text"
             type="text"
             name="questionInput"
             placeholder="Ask a question or share a concern"
@@ -74,7 +76,6 @@ export default function Home() {
             disabled={waiting}
             onChange={(e) => setQuestionInput(e.target.value)}
           />
-            
             
           <input
             type="submit"
