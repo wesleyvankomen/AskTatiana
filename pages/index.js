@@ -9,12 +9,15 @@ import Link from 'next/link'
 import 'tailwindcss/tailwind.css'
 import Spinner from "../components/spinner";
 
-export default function () {
-  const [questionInput, setQuestionInput] = useState("");
-  const [result, setResult] = useState();
-  const [waiting, setWaiting] = useState(false);
-
-  const { completion, input, handleInputChange, handleSubmit } = useCompletion();
+export default function Completion() {
+  const {
+    completion,
+    input,
+    stop,
+    isLoading,
+    handleInputChange,
+    handleSubmit,
+  } = useCompletion();
 
   return (
 
@@ -35,7 +38,7 @@ export default function () {
             placeholder="Ask a question or share a concern"
             value={input}
             maxLength="100"
-            disabled={waiting}
+            disabled={isLoading}
             onChange={handleInputChange}
           />
             
@@ -43,7 +46,7 @@ export default function () {
             type="submit"
             value="Ask Tatiana"
             className="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-6 rounded focus:outline-none focus:shadow-outline disabled:bg-green-300"
-            disabled={waiting}
+            disabled={isLoading}
           />
           {/* <Link href="/support">Give Support</Link> */}
           {/* { <Link href="/stream">stream</Link> } */}
